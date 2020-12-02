@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Missile-1.png.png-a21df93c5b8253e82441abebb532ca7b.stex"
+path="res://.import/TorpedoV2.png-9e0df2f27bd007bfeac4ad535ac21c4f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Missile-1.png.png"
-dest_files=[ "res://.import/Missile-1.png.png-a21df93c5b8253e82441abebb532ca7b.stex" ]
+source_file="res://Assets/TorpedoV2.png"
+dest_files=[ "res://.import/TorpedoV2.png-9e0df2f27bd007bfeac4ad535ac21c4f.stex" ]
 
 [params]
 
