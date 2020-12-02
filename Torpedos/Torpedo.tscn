@@ -43,7 +43,7 @@ polygon = PoolVector2Array( -12.8906, -134.508, 19.1919, -134.405, 19.2328, -128
 
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 0, 100 )
-amount = 10
+amount = 5
 lifetime = 0.7
 process_material = SubResource( 1 )
 texture = ExtResource( 3 )
