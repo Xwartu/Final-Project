@@ -1,4 +1,4 @@
-# Project Name (Need a name)
+# Subtormentum
 MSCH-C220 Game Jam, December 2020
 
 ## Under Pressure
