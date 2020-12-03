@@ -4,19 +4,22 @@ onready var Bullet = load("res://Enemies/Projectiles/Pearl.tscn")
 
 export var move_probability = 0.5
 export var shoot_probability = 0.7
-export var speed = 2.0
+export var speed = 75
 onready var w = int(get_viewport_rect().size.x)
 onready var h = int(get_viewport_rect().size.y)
+var damage = 0
+var velocity = Vector2(75,0)
 
 
 func _ready():
 	randomize()
 
+func _physics_process(delta):
+	move_and_slide(velocity)
 
 func move():
-	var new_position = Vector2(randi() % w, randi() % h)
-	$Tween.interpolate_property(self, "position", position, new_position, Tween.TRANS_EXPO, Tween.EASE_IN_OUT)
-	$Tween.start()
+	pass
+
 
 func shoot():
 	var bullet = Bullet.instance()
@@ -32,3 +35,10 @@ func _on_Shoot_timeout():
 	if randf() < move_probability:
 		shoot()
 
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == "Box2":
+		velocity.x = -75
+	if body.name == "Box1":
+		velocity.x = 75

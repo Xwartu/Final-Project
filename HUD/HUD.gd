@@ -14,7 +14,7 @@ func update_score(s):
 		
 func update_lives(l):
 	global.lives += l
-	lives.text = "Lives: " + str(global.lives)
+	lives.text = "Health: " + str(global.lives)
 	if global.lives<= 0:
 		get_tree().change_scene("res://Screens/End Screen/End.tscn")
 		
