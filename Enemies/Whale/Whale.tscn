@@ -4,9 +4,9 @@
 [ext_resource path="res://Assets/blue-whale.v3.cropped.png" type="Texture" id=2]
 
 [node name="Whale" type="KinematicBody2D"]
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.75, 0.75 )
 collision_layer = 524288
-collision_mask = 524290
+collision_mask = 525315
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

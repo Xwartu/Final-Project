@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var Enemy = load("res://Coin/Coin.tscn")
-export var prob = 0.2
+onready var Enemy = load("res://PowerUps/Heart/Heart.tscn")
+export var prob = 0.15
 
 func _ready():
 	randomize()
@@ -15,3 +15,4 @@ func _on_Timer_timeout():
 		enemy.position.y = -100
 		enemy.speed = Vector2(0, (randi() % 5)+10)
 		add_child(enemy)
+		$Timer.start()

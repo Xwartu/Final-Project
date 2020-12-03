@@ -23,29 +23,21 @@ func _physics_process(_delta):
 		if c:
 			var velocity = ray.cast_to.normalized()*looking_speed
 			if c.name == "Player":
-				#velocity = ray.cast_to.normalized()*speed
-				var b = 0
-				var k = 0
-				var d = player.global_position.x
-				var y = player.global_position.y
-				b = player.global_position.distance_to(Vector2(player.global_position.x, 0))
-				k = player.global_position.distance_to(Vector2(0, player.global_position.y))
-				velocity = Vector2(b,k)
-				return velocity
-				#move_toward(b, k, 50)
+				velocity = ray.cast_to.normalized()*speed
 			if direction < 0 and !$Sprite.flip_h:
 				$Sprite.flip_h = true
 			if direction > 0 and $Sprite.flip_h:
 				$Sprite.flip_h = false
-	
 			#print(velocity)
-			#move_and_slide(velocity, Vector2(0,0))
+			move_and_slide(velocity, Vector2(0,0))
 			#var motion = velocity * _delta
 			#move_and_collide(motion)
 			#var direct = player.global_position - position
 			#rotation = direct.angle()
+	
 
-func _on_Area2D_body_shape_entered(body_id, body, body_shape, area_shape):
+
+func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		HUD.update_lives(-damage)
 		var explosion = Explosion.instance()
@@ -53,5 +45,3 @@ func _on_Area2D_body_shape_entered(body_id, body, body_shape, area_shape):
 		get_node("/root/Game/Explosions").add_child(explosion)
 		explosion.get_node("Animation").play()
 		queue_free()
-
-	

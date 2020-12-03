@@ -1,7 +1,6 @@
 extends Control
 
 onready var global = get_node("/root/Global")
-onready var HUD = get_node("/root/Game/HUD")
 
 func _ready():
 	pass
