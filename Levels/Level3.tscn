@@ -118,8 +118,8 @@ autostart = true
 script = ExtResource( 20 )
 
 [node name="Shark" parent="Enemy_Instance/Sharks" instance=ExtResource( 19 )]
-position = Vector2( -339.319, 109.548 )
-rotation = 0.523599
+position = Vector2( 133.215, 133.575 )
+rotation = 0.015708
 
 [node name="PowerUps" type="Node2D" parent="."]
 
@@ -250,8 +250,8 @@ script = ExtResource( 12 )
 [node name="Timer" type="Timer" parent="Mines"]
 wait_time = 8.0
 autostart = true
-[connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance/Clams" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Fishs/Timer" to="Enemy_Instance/Fishs" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Pufferfishs/Timer" to="Enemy_Instance/Pufferfishs" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Whales/Timer" to="Enemy_Instance/Whales" method="_on_Timer_timeout"]

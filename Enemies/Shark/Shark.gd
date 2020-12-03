@@ -4,11 +4,11 @@ onready var player = null
 onready var ray = $RayCast2D
 export var speed = 550
 export var looking_speed = 100
-var damage = 4
+var damage = 12
 onready var HUD = get_node("/root/Game/HUD")
 onready var Explosion = load("res://Explosions/Explosion.tscn")
 onready var global = get_node("/root/Global")
-var direction = 1
+var direction = 0
 
 func _physics_process(_delta):
 	if player == null:
@@ -23,12 +23,27 @@ func _physics_process(_delta):
 		if c:
 			var velocity = ray.cast_to.normalized()*looking_speed
 			if c.name == "Player":
-				velocity = ray.cast_to.normalized()*speed
+				#velocity = ray.cast_to.normalized()*speed
+				var b = 0
+				var k = 0
+				var d = player.global_position.x
+				var y = player.global_position.y
+				b = player.global_position.distance_to(Vector2(player.global_position.x, 0))
+				k = player.global_position.distance_to(Vector2(0, player.global_position.y))
+				velocity = Vector2(b,k)
+				return velocity
+				#move_toward(b, k, 50)
 			if direction < 0 and !$Sprite.flip_h:
 				$Sprite.flip_h = true
 			if direction > 0 and $Sprite.flip_h:
 				$Sprite.flip_h = false
-			move_and_slide(velocity, Vector2(0,0))
+	
+			#print(velocity)
+			#move_and_slide(velocity, Vector2(0,0))
+			#var motion = velocity * _delta
+			#move_and_collide(motion)
+			#var direct = player.global_position - position
+			#rotation = direct.angle()
 
 func _on_Area2D_body_shape_entered(body_id, body, body_shape, area_shape):
 	if body.name == "Player":

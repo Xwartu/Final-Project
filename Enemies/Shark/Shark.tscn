@@ -10,7 +10,7 @@ script = ExtResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 0, 1000 )
+cast_to = Vector2( 0, 1500 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.05, 0.05 )
