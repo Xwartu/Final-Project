@@ -173,7 +173,7 @@ polygon = PoolVector2Array( -24, 0, -24, -24, 0, -24, 1048, -24, 1048, 868, 1048
 script = ExtResource( 13 )
 
 [node name="Timer" type="Timer" parent="Enemy_Instance/Clams"]
-wait_time = 4.0
+wait_time = 2.8
 autostart = true
 
 [node name="Fishs" type="Node2D" parent="Enemy_Instance"]
@@ -291,7 +291,7 @@ one_shot = true
 scale = Vector2( 0.132976, 0.13454 )
 frames = SubResource( 16 )
 animation = "New Anim"
-frame = 10
+frame = 4
 speed_scale = 2.0
 playing = true
 
@@ -345,10 +345,10 @@ script = ExtResource( 11 )
 script = ExtResource( 12 )
 
 [node name="Timer" type="Timer" parent="Mines"]
-wait_time = 3.0
+wait_time = 8.0
 autostart = true
-[connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance/Clams" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Fishs/Timer" to="Enemy_Instance/Fishs" method="_on_Timer_timeout"]
 [connection signal="pressed" from="HUD/Audio Controls/MusicON" to="Music" method="_on_MusicON_pressed"]
 [connection signal="pressed" from="HUD/Audio Controls/MusicOff" to="Music" method="_on_MusicOff_pressed"]

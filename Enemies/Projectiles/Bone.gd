@@ -17,7 +17,7 @@ func _physics_process(delta):
 		queue_free()
 
 func _on_Area2D_body_entered(body):
-	HUD.update_lives(-body.damage)
+	HUD.update_lives(-damage)
 	var explosion = Explosion.instance()
 	explosion.position = position
 	get_node("/root/Game/Explosions").add_child(explosion)

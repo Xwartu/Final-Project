@@ -19,13 +19,22 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	HUD.update_score(points)
-	body.queue_free()
-	if body.name == "Fish":
-		global.c2 -= 1
-	if body.name == "Clam":
-		global.c3 -= 1
-	var explosion = Explosion.instance()
-	explosion.position = position
-	get_node("/root/Game/Explosions").add_child(explosion)
-	explosion.get_node("Animation").play()
-	queue_free()
+	if body.name != "Mine":
+		body.queue_free()
+		if body.name == "Fish":
+			global.c2 -= 1
+		if body.name == "Clam":
+			global.c3 -= 1
+		if body.name == "Pufferish":
+			global.c4 -= 1
+		var explosion = Explosion.instance()
+		explosion.position = position
+		get_node("/root/Game/Explosions").add_child(explosion)
+		explosion.get_node("Animation").play()
+		queue_free()
+	else:
+		var explosion = Explosion.instance()
+		explosion.position = position
+		get_node("/root/Game/Explosions").add_child(explosion)
+		explosion.get_node("Animation").play()
+		queue_free()

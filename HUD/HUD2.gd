@@ -5,7 +5,7 @@ onready var score = get_node("/root/Game/HUD/Labels/Score")
 onready var lives = get_node("/root/Game/HUD/Labels/Lives")
 
 func _on_Score_high():
-	get_tree().change_scene("res://Levels/Level2.tscn")
+	get_tree().change_scene("res://Levels/Level3.tscn")
 
 func _ready():
 	update_score(0)
@@ -14,9 +14,9 @@ func _ready():
 func update_score(s):
 	global.score += s
 	score.text = "Score: " + str(global.score)
-	if global.score >= 200:
+	if global.score >= 400:
 		_on_Score_high()
-		update_lives(50)
+		update_lives(60)
 	
 func update_lives(l):
 	global.lives += l

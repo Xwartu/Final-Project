@@ -29,7 +29,6 @@ func _on_Shoot_timeout():
 		shoot()
 
 
-
 func _on_Area2D_body_entered(body):
 	if body.name == "Box2":
 		velocity.x = -75
