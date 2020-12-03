@@ -7,4 +7,4 @@ func _ready():
 
 
 func _on_Button_pressed():
-	HUD.update_score(400)
+	HUD.update_score(200)
