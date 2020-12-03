@@ -213,8 +213,8 @@ script = ExtResource( 12 )
 [node name="Timer" type="Timer" parent="Mines"]
 wait_time = 8.0
 autostart = true
-[connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance/Clams" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Fishs/Timer" to="Enemy_Instance/Fishs" method="_on_Timer_timeout"]
 [connection signal="pressed" from="HUD/Audio Controls/MusicON" to="Music" method="_on_MusicON_pressed"]
 [connection signal="pressed" from="HUD/Audio Controls/MusicOff" to="Music" method="_on_MusicOff_pressed"]

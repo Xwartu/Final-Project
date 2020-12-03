@@ -183,5 +183,6 @@ position = Vector2( 499.861, 179.831 )
 rotation = -1.5708
 scale = Vector2( 0.114248, 0.114248 )
 frames = SubResource( 17 )
+frame = 7
 playing = true
 [connection signal="pressed" from="ColorRect/Button" to="." method="_on_Button_pressed"]
