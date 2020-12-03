@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var Enemy = load("res://Coin/Coin.tscn")
-export var prob = 0.8
+export var prob = 0.2
 
 func _ready():
 	randomize()
