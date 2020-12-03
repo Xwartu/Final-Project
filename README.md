@@ -20,7 +20,7 @@ Assets, or resources used
 ## Future Development
 
 # Created by: Uminami
-Joshua Tonner - Scripting, Assets
-Sam Johnson - Scripting, Assets
-Spencer Abrams - Assets
-Jason Steptoe - Music, Sound Effects
+Joshua Tonner - Scripting - AI, Node and File Structure, Asset finding and creation
+Sam Johnson - Scripting - HUD, Transitions, Bumper Screens, Asset finding and creation
+Spencer Abrams - Asset finding and creation, Task Assignment, Idea creation and approval
+Jason Steptoe - Full Music production, Sound Effects
