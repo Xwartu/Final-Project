@@ -6,7 +6,7 @@ onready var lives = get_node("/root/Game/HUD/Labels/Lives")
 
 func _on_Score_high():
 	pass
-	#get_tree().change_scene("res://Screens/SceneTransitions/SceneChange2.tscn")
+	#get_tree().change_scene("res://Screens/SceneTransitions/SceneChange3.tscn")
 	#Win screen
 
 func _ready():
