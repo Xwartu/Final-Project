@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Labels2.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Icons/musicOff.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Icons/musicOn.png" type="Texture" id=4]
 [ext_resource path="res://Coin/Coin_Container.gd" type="Script" id=5]
@@ -154,6 +155,10 @@ flat = true
 [node name="Labels" type="Control" parent="HUD"]
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Scorebox" type="ColorRect" parent="HUD/Labels"]
 margin_right = 140.0
@@ -194,6 +199,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button" type="Button" parent="HUD/Labels"]
+margin_left = 232.238
+margin_top = 116.868
+margin_right = 797.238
+margin_bottom = 136.868
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Player_Instance" type="Node2D" parent="."]
 
 [node name="Player" parent="Player_Instance" instance=ExtResource( 1 )]
@@ -228,13 +242,14 @@ script = ExtResource( 14 )
 [node name="Timer" type="Timer" parent="Mines"]
 wait_time = 8.0
 autostart = true
-[connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance/Clams" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Fishs/Timer" to="Enemy_Instance/Fishs" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Pufferfishs/Timer" to="Enemy_Instance/Pufferfishs" method="_on_Timer_timeout"]
 [connection signal="timeout" from="PowerUps/Hearts/Timer" to="PowerUps/Hearts" method="_on_Timer_timeout"]
 [connection signal="pressed" from="HUD/Audio Controls/MusicON" to="Music" method="_on_MusicON_pressed"]
 [connection signal="pressed" from="HUD/Audio Controls/MusicOff" to="Music" method="_on_MusicOff_pressed"]
 [connection signal="pressed" from="HUD/Audio Controls/MusicOff" to="Music" method="_on_MusicOFF_pressed"]
+[connection signal="pressed" from="HUD/Labels/Button" to="HUD/Labels" method="_on_Button_pressed"]
 [connection signal="timeout" from="Coin_Container/Timer" to="Coin_Container" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Mines/Timer" to="Mines" method="_on_Timer_timeout"]

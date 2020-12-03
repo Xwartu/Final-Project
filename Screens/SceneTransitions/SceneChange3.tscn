@@ -112,7 +112,7 @@ __meta__ = {
 position = Vector2( 525.513, 462.784 )
 scale = Vector2( 0.127079, 0.127079 )
 frames = SubResource( 14 )
-frame = 7
+frame = 9
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

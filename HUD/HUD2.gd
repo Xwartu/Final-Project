@@ -5,7 +5,7 @@ onready var score = get_node("/root/Game/HUD/Labels/Score")
 onready var lives = get_node("/root/Game/HUD/Labels/Lives")
 
 func _on_Score_high():
-	get_tree().change_scene("res://Levels/Level3.tscn")
+	get_tree().change_scene("res://Screens/SceneTransitions/SceneChange3.tscn")
 
 func _ready():
 	update_score(0)
