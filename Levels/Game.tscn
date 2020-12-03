@@ -11,7 +11,7 @@
 [ext_resource path="res://Camera/Camera.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Bubble-1.png (2).png" type="Texture" id=10]
 [ext_resource path="res://Coin/Coin_Container.gd" type="Script" id=11]
-[ext_resource path="res://Enemies/Clam/Clam.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Enemies/Mine/Mines.gd" type="Script" id=12]
 [ext_resource path="res://Enemies/Clam/Enemy_Instance.gd" type="Script" id=13]
 [ext_resource path="res://Enemies/Fish/Fish.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Enemies/Fish/Fishs.gd" type="Script" id=16]
@@ -172,12 +172,6 @@ polygon = PoolVector2Array( -24, 0, -24, -24, 0, -24, 1048, -24, 1048, 868, 1048
 [node name="Clams" type="Node2D" parent="Enemy_Instance"]
 script = ExtResource( 13 )
 
-[node name="Clam" parent="Enemy_Instance/Clams" instance=ExtResource( 12 )]
-position = Vector2( 1392.97, 1109.76 )
-rotation = 3.14159
-collision_layer = 2
-collision_mask = 2147483650
-
 [node name="Timer" type="Timer" parent="Enemy_Instance/Clams"]
 wait_time = 4.0
 autostart = true
@@ -297,7 +291,7 @@ one_shot = true
 scale = Vector2( 0.132976, 0.13454 )
 frames = SubResource( 16 )
 animation = "New Anim"
-frame = 5
+frame = 10
 speed_scale = 2.0
 playing = true
 
@@ -346,11 +340,19 @@ script = ExtResource( 11 )
 [node name="Pearls" type="Node2D" parent="."]
 
 [node name="Bones" type="Node2D" parent="."]
-[connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance/Clams" method="_on_Timer_timeout"]
+
+[node name="Mines" type="Node2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="Mines"]
+wait_time = 3.0
+autostart = true
 [connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance/Clams" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Fishs/Timer" to="Enemy_Instance/Fishs" method="_on_Timer_timeout"]
 [connection signal="pressed" from="HUD/Audio Controls/MusicON" to="Music" method="_on_MusicON_pressed"]
 [connection signal="pressed" from="HUD/Audio Controls/MusicOff" to="Music" method="_on_MusicOff_pressed"]
 [connection signal="pressed" from="HUD/Audio Controls/MusicOff" to="Music" method="_on_MusicOFF_pressed"]
 [connection signal="timeout" from="Player_Instance/Player/Timer" to="Player_Instance/Player" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Player_Instance/Player/Damage_Indicator" to="Player_Instance/Player" method="_on_Damage_Indicator_body_entered"]
+[connection signal="timeout" from="Mines/Timer" to="Mines" method="_on_Timer_timeout"]

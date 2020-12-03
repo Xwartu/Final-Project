@@ -7,7 +7,8 @@ export var prob2 = 0.3
 var c = 1
 var c2 = 0
 
-onready var width = get_viewport().size.x
+func _ready():
+	randomize()
 
 func _on_Timer_timeout():
 	for ch in range(c):

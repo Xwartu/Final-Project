@@ -17,18 +17,11 @@ func _ready():
 func _physics_process(delta):
 	move_and_slide(velocity)
 
-func move():
-	pass
-
 
 func shoot():
 	var bullet = Bullet.instance()
 	bullet.position = position + Vector2(0,10)
 	get_node("/root/Game/Pearls").add_child(bullet)
-
-func _on_Move_timeout():
-	if randf() < move_probability:
-		move()
 
 
 func _on_Shoot_timeout():

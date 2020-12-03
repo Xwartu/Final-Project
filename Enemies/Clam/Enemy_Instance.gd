@@ -5,7 +5,9 @@ onready var Enemy = load("res://Enemies/Clam/Clam.tscn")
 export var prob = 0.8
 var c = 1
 
-onready var width = get_viewport().size.x
+func _ready():
+	randomize()
+
 
 func _on_Timer_timeout():
 	for ch in range(c):
