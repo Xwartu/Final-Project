@@ -3,7 +3,8 @@
 [ext_resource path="res://Screens/SceneTransitions/SceneChange1.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Submarine.png" type="Texture" id=3]
-[ext_resource path="res://Assets/levelupbloop.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sound Effects/levelupbloop.wav" type="AudioStream" id=4]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 200

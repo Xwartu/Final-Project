@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/levelupbloop.wav-6b852a5ae2fa3bd9023a10a0239763c9.sample"
+path="res://.import/Explosion.wav-6f519618cbe001c93597bcd642d7b913.sample"
 
 [deps]
 
-source_file="res://Assets/levelupbloop.wav"
-dest_files=[ "res://.import/levelupbloop.wav-6b852a5ae2fa3bd9023a10a0239763c9.sample" ]
+source_file="res://Assets/Sound Effects/Explosion.wav"
+dest_files=[ "res://.import/Explosion.wav-6f519618cbe001c93597bcd642d7b913.sample" ]
 
 [params]
 
