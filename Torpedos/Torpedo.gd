@@ -18,7 +18,7 @@ func _physics_process(delta):
 		queue_free()
 
 func _on_Area2D_body_entered(body):
-	if body.name != "Mine" or body.name != "Whale":
+	if body.name != "Mine" and body.name != "Whale":
 		HUD.update_score(points)
 		body.queue_free()
 		if body.name == "Fish":

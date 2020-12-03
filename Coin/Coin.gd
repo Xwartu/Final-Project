@@ -20,6 +20,7 @@ func _physics_process(delta):
 		queue_free()
 
 func _on_Area2D_body_entered(body):
-	HUD.update_score(damage)
-	queue_free()
+	if body.name == "Player":
+		HUD.update_score(damage)
+		queue_free()
 	

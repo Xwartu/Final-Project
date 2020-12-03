@@ -6,8 +6,7 @@ onready var lives = get_node("/root/Game/HUD/Labels/Lives")
 
 func _on_Score_high():
 	pass
-	#get_tree().change_scene("res://Screens/SceneTransitions/SceneChange2.tscn")
-	#Win screen
+	get_tree().change_scene("res://Screens/End Screen/Win.tscn")
 
 func _ready():
 	update_score(0)
@@ -25,4 +24,3 @@ func update_lives(l):
 	lives.text = "Health: " + str(global.lives)
 	if global.lives<= 0:
 		get_tree().change_scene("res://Screens/End Screen/End.tscn")
-		

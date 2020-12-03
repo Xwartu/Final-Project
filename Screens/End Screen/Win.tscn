@@ -27,7 +27,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.501961, 0.164706, 0.164706, 1 )
+color = Color( 0.419608, 0.470588, 0.666667, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -35,12 +35,12 @@ __meta__ = {
 [node name="Label" type="Label" parent="ColorRect"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -445.5
-margin_top = 124.243
-margin_right = 445.5
-margin_bottom = 291.243
+margin_left = -383.0
+margin_top = 209.807
+margin_right = 383.0
+margin_bottom = 376.807
 custom_fonts/font = SubResource( 1 )
-text = "you died!"
+text = "you win"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -58,9 +58,9 @@ __meta__ = {
 }
 
 [node name="Button2" type="Button" parent="ColorRect"]
-margin_left = 625.904
+margin_left = 624.732
 margin_top = 516.898
-margin_right = 814.904
+margin_right = 813.732
 margin_bottom = 644.898
 custom_fonts/font = SubResource( 3 )
 text = "quit"

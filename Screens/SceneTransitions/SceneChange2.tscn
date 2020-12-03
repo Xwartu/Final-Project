@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Screens/SceneTransitions/SceneChange2.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Submarine.png" type="Texture" id=3]
+[ext_resource path="res://Assets/levelupbloop.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 200
@@ -112,10 +113,14 @@ __meta__ = {
 position = Vector2( 525.513, 462.784 )
 scale = Vector2( 0.127079, 0.127079 )
 frames = SubResource( 14 )
-frame = 9
+frame = 6
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
