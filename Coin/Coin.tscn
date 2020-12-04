@@ -85,7 +85,7 @@ polygon = PoolVector2Array( -4.8125, -11.0859, 4.84375, -11.0938, 4.83594, -9.59
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 13 )
-frame = 4
+frame = 1
 speed_scale = 3.0
 playing = true
 

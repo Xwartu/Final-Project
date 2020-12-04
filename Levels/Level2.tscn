@@ -6,8 +6,8 @@
 [ext_resource path="res://Assets/Icons/musicOn.png" type="Texture" id=4]
 [ext_resource path="res://Coin/Coin_Container.gd" type="Script" id=5]
 [ext_resource path="res://Background/Transit-1.png (2).png" type="Texture" id=6]
+[ext_resource path="res://Assets/Music/Uminami Level 2 Track.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Enemies/Fish/Fish.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Music/Umimami Level 3 Track.ogg" type="AudioStream" id=9]
 [ext_resource path="res://HUD/HUD3.gd" type="Script" id=10]
 [ext_resource path="res://Audio/PausePlay.gd" type="Script" id=11]
 [ext_resource path="res://Audio/Music.gd" type="Script" id=12]
@@ -243,7 +243,7 @@ stream = ExtResource( 2 )
 script = ExtResource( 11 )
 
 [node name="Track1" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource( 9 )
+stream = ExtResource( 7 )
 autoplay = true
 script = ExtResource( 12 )
 
