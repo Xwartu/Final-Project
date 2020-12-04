@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Bubbles/BubbleLeft.tres" type="Material" id=5]
 [ext_resource path="res://Assets/Bubbles/BubbleRight.tres" type="Material" id=6]
 [ext_resource path="res://Screens/SceneTransitions/SceneChange3.gd" type="Script" id=7]
-[ext_resource path="res://Background/Transit-1.png (1).png" type="Texture" id=8]
+[ext_resource path="res://Background/Transit-1.png (3).png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 200
@@ -121,7 +121,7 @@ __meta__ = {
 position = Vector2( 512, 570 )
 scale = Vector2( 0.127079, 0.127079 )
 frames = SubResource( 14 )
-frame = 7
+frame = 11
 speed_scale = 2.0
 playing = true
 

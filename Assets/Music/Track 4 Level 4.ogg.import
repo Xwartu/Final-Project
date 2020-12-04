@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Track 4 Level 4.ogg-72d0e296c1fcc4f6b20840ea10c2ae45.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Track 4 Level 4.ogg"
+dest_files=[ "res://.import/Track 4 Level 4.ogg-72d0e296c1fcc4f6b20840ea10c2ae45.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

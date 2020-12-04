@@ -16,6 +16,15 @@ func _physics_process(delta):
 	
 	if global_position.y < -100:
 		queue_free()
+		
+onready var NeedBool = true
+
+
+
+func play_sound(sound):
+	if NeedBool == true:
+		sound.play()
+
 
 func _on_Area2D_body_entered(body):
 	if body.name != "Mine" and body.name != "Whale":

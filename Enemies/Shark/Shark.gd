@@ -15,6 +15,7 @@ func _physics_process(_delta):
 		player = get_node("/root/Game/Player_Instance/Player")
 	else:
 		ray.cast_to = ray.to_local(player.global_position)
+		var x = ray.get_collision_point()
 		if position.x < player.global_position.x:
 			direction = 1
 		if position.x > player.global_position.x:
@@ -26,15 +27,13 @@ func _physics_process(_delta):
 				velocity = ray.cast_to.normalized()*speed
 			if direction < 0 and !$Sprite.flip_h:
 				$Sprite.flip_h = true
+				$Sprite.look_at(x)
 			if direction > 0 and $Sprite.flip_h:
+				$Sprite.look_at(x) 
 				$Sprite.flip_h = false
-			#print(velocity)
+				$Sprite.look_at(x)
 			move_and_slide(velocity, Vector2(0,0))
-			#var motion = velocity * _delta
-			#move_and_collide(motion)
-			#var direct = player.global_position - position
-			#rotation = direct.angle()
-	
+
 
 
 func _on_Area2D_body_entered(body):

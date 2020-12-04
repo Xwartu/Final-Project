@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Menu Music - Skate.ogg-fb3f16afc3d1f6a692863f7a105221eb.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Menu Music - Skate.ogg"
+dest_files=[ "res://.import/Menu Music - Skate.ogg-fb3f16afc3d1f6a692863f7a105221eb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
