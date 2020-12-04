@@ -5,11 +5,11 @@
 [ext_resource path="res://Assets/Fonts/Kenney Pixel Square.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Icons/musicOff.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Icons/musicOn.png" type="Texture" id=5]
-[ext_resource path="res://Background/Transit-1.png (1).png" type="Texture" id=6]
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=6]
 [ext_resource path="res://Audio/PausePlay.gd" type="Script" id=7]
 [ext_resource path="res://Audio/Music.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Music/Uminami Level 1 Track.ogg" type="AudioStream" id=9]
-[ext_resource path="res://HUD/HUD3.gd" type="Script" id=10]
+[ext_resource path="res://Background/Transit-1.png (1).png" type="Texture" id=10]
 [ext_resource path="res://Coin/Coin_Container.gd" type="Script" id=11]
 [ext_resource path="res://Enemies/Mine/Mines.gd" type="Script" id=12]
 [ext_resource path="res://PowerUps/Heart/Hearts.gd" type="Script" id=14]
@@ -65,7 +65,7 @@ polygon = PoolVector2Array( -24, 0, -24, -24, 0, -24, 1048, -24, 1048, 868, 1048
 
 [node name="Sprite" type="Sprite" parent="Background"]
 position = Vector2( 512, 434 )
-texture = ExtResource( 6 )
+texture = ExtResource( 10 )
 
 [node name="Enemy_Instance" type="Node2D" parent="."]
 
@@ -103,7 +103,7 @@ autostart = true
 [node name="HUD" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 10 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
