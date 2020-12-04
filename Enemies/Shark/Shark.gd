@@ -26,12 +26,13 @@ func _physics_process(_delta):
 			if c.name == "Player":
 				velocity = ray.cast_to.normalized()*speed
 			if direction < 0 and !$Sprite.flip_h:
-				$Sprite.flip_h = true
 				$Sprite.look_at(x)
+				$Sprite.global_rotation_degrees += 180
+				$Sprite.flip_h = true
 			if direction > 0 and $Sprite.flip_h:
 				$Sprite.look_at(x) 
+				$Sprite.global_rotation_degrees += 180
 				$Sprite.flip_h = false
-				$Sprite.look_at(x)
 			move_and_slide(velocity, Vector2(0,0))
 
 

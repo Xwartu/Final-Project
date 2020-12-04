@@ -1,22 +1,26 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Levels/Labels2.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sound Effects/Coin.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Icons/musicOff.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Icons/musicOn.png" type="Texture" id=4]
 [ext_resource path="res://Coin/Coin_Container.gd" type="Script" id=5]
-[ext_resource path="res://Enemies/Clam/Enemy_Instance.gd" type="Script" id=6]
-[ext_resource path="res://Camera/Camera.gd" type="Script" id=7]
+[ext_resource path="res://Background/Transit-1.png (2).png" type="Texture" id=6]
 [ext_resource path="res://Enemies/Fish/Fish.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Enemies/Fish/Fishs.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Music/Umimami Level 3 Track.ogg" type="AudioStream" id=9]
+[ext_resource path="res://HUD/HUD3.gd" type="Script" id=10]
 [ext_resource path="res://Audio/PausePlay.gd" type="Script" id=11]
 [ext_resource path="res://Audio/Music.gd" type="Script" id=12]
-[ext_resource path="res://HUD/HUD2.gd" type="Script" id=13]
 [ext_resource path="res://Enemies/Mine/Mines.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Fonts/Kenney Pixel Square.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://Enemies/Pufferfish/Pufferfish.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Enemies/Pufferfish/Pufferfishs.gd" type="Script" id=17]
 [ext_resource path="res://PowerUps/Heart/Hearts.gd" type="Script" id=18]
+[ext_resource path="res://HUD/Tween.gd" type="Script" id=19]
+[ext_resource path="res://HUD/Tween2.gd" type="Script" id=21]
+[ext_resource path="res://Assets/Sound Effects/Explosion.wav" type="AudioStream" id=22]
+[ext_resource path="res://Enemies/Fish/Fishs3.gd" type="Script" id=24]
+[ext_resource path="res://Enemies/Clam/Enemy_Instance3.gd" type="Script" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 269.316 )
@@ -33,16 +37,6 @@ font_data = ExtResource( 15 )
 [node name="Background" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="Background"]
-margin_left = -0.03125
-margin_top = 0.722717
-margin_right = 1024.0
-margin_bottom = 868.723
-color = Color( 0.0666667, 0.313726, 0.623529, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -71,20 +65,24 @@ collision_mask = 1024
 position = Vector2( 0, 1 )
 polygon = PoolVector2Array( -24, 0, -24, -24, 0, -24, 1048, -24, 1048, 868, 1048, 892, -24, 892, -24, 868, 0.863495, 868, 1024, 868, 1024, 0, 0, 0, 0.41806, 868.512, -24, 868 )
 
+[node name="Sprite" type="Sprite" parent="Background"]
+position = Vector2( 512, 434 )
+texture = ExtResource( 6 )
+
 [node name="Enemy_Instance" type="Node2D" parent="."]
 
 [node name="Clams" type="Node2D" parent="Enemy_Instance"]
-script = ExtResource( 6 )
+script = ExtResource( 25 )
 
 [node name="Timer" type="Timer" parent="Enemy_Instance/Clams"]
-wait_time = 2.8
+wait_time = 4.5
 autostart = true
 
 [node name="Fishs" type="Node2D" parent="Enemy_Instance"]
-script = ExtResource( 9 )
+script = ExtResource( 24 )
 
 [node name="Timer" type="Timer" parent="Enemy_Instance/Fishs"]
-wait_time = 5.0
+wait_time = 6.0
 autostart = true
 
 [node name="Fish" parent="Enemy_Instance/Fishs" instance=ExtResource( 8 )]
@@ -107,7 +105,7 @@ script = ExtResource( 18 )
 prob = 0.25
 
 [node name="Timer" type="Timer" parent="PowerUps/Hearts"]
-wait_time = 25.0
+wait_time = 20.0
 autostart = true
 
 [node name="Explosions" type="Node2D" parent="."]
@@ -117,7 +115,7 @@ autostart = true
 [node name="HUD" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 13 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -155,10 +153,22 @@ flat = true
 [node name="Labels" type="Control" parent="HUD"]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Scorebox2" type="ColorRect" parent="HUD/Labels"]
+margin_right = 150.0
+margin_bottom = 50.0
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="HUD/Labels/Scorebox2"]
+
+[node name="Timer" type="Timer" parent="HUD/Labels/Scorebox2"]
+autostart = true
 
 [node name="Scorebox" type="ColorRect" parent="HUD/Labels"]
 margin_right = 140.0
@@ -178,6 +188,21 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Livebox2" type="ColorRect" parent="HUD/Labels"]
+margin_left = 854.0
+margin_right = 1024.0
+margin_bottom = 50.0
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="HUD/Labels/Livebox2"]
+
+[node name="Timer" type="Timer" parent="HUD/Labels/Livebox2"]
+wait_time = 0.25
+autostart = true
 
 [node name="Livebox" type="ColorRect" parent="HUD/Labels"]
 margin_left = 864.0
@@ -199,37 +224,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="HUD/Labels"]
-margin_left = 232.238
-margin_top = 116.868
-margin_right = 797.238
-margin_bottom = 136.868
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Player_Instance" type="Node2D" parent="."]
 
 [node name="Player" parent="Player_Instance" instance=ExtResource( 1 )]
 
 [node name="Sound_Effects" type="Node2D" parent="."]
 
+[node name="Explosion" type="AudioStreamPlayer" parent="Sound_Effects"]
+stream = ExtResource( 22 )
+volume_db = -20.0
+
+[node name="Coin" type="AudioStreamPlayer" parent="Sound_Effects"]
+stream = ExtResource( 2 )
+
+[node name="Heart" type="AudioStreamPlayer" parent="Sound_Effects"]
+
 [node name="Music" type="Node2D" parent="."]
 script = ExtResource( 11 )
 
 [node name="Track1" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource( 9 )
+autoplay = true
 script = ExtResource( 12 )
-
-[node name="Camera" type="Camera2D" parent="."]
-position = Vector2( 512, 434 )
-current = true
-script = ExtResource( 7 )
 
 [node name="Coin_Container" type="Node2D" parent="."]
 script = ExtResource( 5 )
 
 [node name="Timer" type="Timer" parent="Coin_Container"]
-wait_time = 30.0
+wait_time = 20.0
 autostart = true
 
 [node name="Pearls" type="Node2D" parent="."]
@@ -243,13 +265,13 @@ script = ExtResource( 14 )
 wait_time = 8.0
 autostart = true
 [connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance/Clams" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Enemy_Instance/Clams/Timer" to="Enemy_Instance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Fishs/Timer" to="Enemy_Instance/Fishs" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Enemy_Instance/Pufferfishs/Timer" to="Enemy_Instance/Pufferfishs" method="_on_Timer_timeout"]
 [connection signal="timeout" from="PowerUps/Hearts/Timer" to="PowerUps/Hearts" method="_on_Timer_timeout"]
 [connection signal="pressed" from="HUD/Audio Controls/MusicON" to="Music" method="_on_MusicON_pressed"]
 [connection signal="pressed" from="HUD/Audio Controls/MusicOff" to="Music" method="_on_MusicOff_pressed"]
 [connection signal="pressed" from="HUD/Audio Controls/MusicOff" to="Music" method="_on_MusicOFF_pressed"]
-[connection signal="pressed" from="HUD/Labels/Button" to="HUD/Labels" method="_on_Button_pressed"]
+[connection signal="timeout" from="HUD/Labels/Scorebox2/Timer" to="HUD/Labels/Scorebox2" method="_on_Timer_timeout"]
+[connection signal="timeout" from="HUD/Labels/Livebox2/Timer" to="HUD/Labels/Livebox2" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Coin_Container/Timer" to="Coin_Container" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Mines/Timer" to="Mines" method="_on_Timer_timeout"]

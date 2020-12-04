@@ -7,8 +7,17 @@ onready var HUD = get_node("/root/Game/HUD")
 export var speed = Vector2(0,3)
 export var damage = 25
 
+
+onready var effect_explosion = get_node("/root/Game/Sound_Effects/Coin")
+onready var NeedBool = true
+
+func play_sound(sound):
+	if NeedBool == true:
+		sound.play()
+
 func _ready():
 	randomize()
+	play_sound(effect_explosion)
 
 func _physics_process(delta):
 	velocity.y += delta * GRAVITY
@@ -24,3 +33,5 @@ func _on_Area2D_body_entered(body):
 		HUD.update_score(damage)
 		queue_free()
 	
+	
+
