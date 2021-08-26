@@ -165,7 +165,7 @@ position = Vector2( 497, 173 )
 rotation = -1.5708
 scale = Vector2( 0.125, 0.125 )
 frames = SubResource( 16 )
-frame = 9
+frame = 8
 speed_scale = 2.0
 playing = true
 
@@ -242,5 +242,6 @@ __meta__ = {
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
